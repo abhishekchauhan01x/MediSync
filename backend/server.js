@@ -17,13 +17,16 @@ connectCloudinary()
 // middlewares
 app.use(express.json())
 app.use(cors({
-    origin: 'https://medi-sync-dusky.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+    origin: [
+        'https://medi-sync-dusky.vercel.app',
+        'https://medisync-admin-mu.vercel.app'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
 }))
 
 // api endpoints
-app.use('/api/admin',adminRouter)l
+app.use('/api/admin',adminRouter)
 app.use('/api/doctor',doctorRouter)
 app.use('/api/user',userRouter)
 // localhost:3000/api/admin/add-doctor
