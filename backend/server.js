@@ -33,7 +33,7 @@ app.use(cors({
     credentials: true
 }));
 
-app.options('*', cors()); // handles preflight OPTIONS requests
+// app.options('*', cors()); // handles preflight OPTIONS requests
 
 // api endpoints
 app.use('/api/admin',adminRouter)
