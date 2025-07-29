@@ -239,5 +239,17 @@ const cancelAppointment = async (req, res) => {
     }
 }
 
+const getAppointmentById = async (req, res) => {
+    try {
+        const appointment = await appointmentModel.findById(req.params.id);
+        if (!appointment) {
+            return res.status(404).json({ success: false, message: "Appointment not found" });
+        }
+        res.json({ success: true, appointment });
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
 
-export { registerUser, loginUser, getProfile, updateProfile, bookAppointment, listAppointment, cancelAppointment }
+
+export { registerUser, loginUser, getProfile, updateProfile, bookAppointment, listAppointment, cancelAppointment, getAppointmentById }
