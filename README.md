@@ -34,21 +34,21 @@ JWT_SECRET=your_jwt_secret
 Frontend (`frontend/.env`):
 
 ```
-# Local backend
-VITE_BACKEND_URL=http://localhost:3000
+# Production backend
+VITE_BACKEND_URL=https://medisync-q4dk.onrender.com
 
-# Production (keep commented)
-# VITE_BACKEND_URL=https://medisync-q4dk.onrender.com
+# Local (optional)
+# VITE_BACKEND_URL=http://localhost:3000
 ```
 
 Admin (`admin/.env`):
 
 ```
-# Local backend
-VITE_BACKEND_URL=http://localhost:3000
+# Production backend
+VITE_BACKEND_URL=https://medisync-q4dk.onrender.com
 
-# Production (keep commented)
-# VITE_BACKEND_URL=https://medisync-q4dk.onrender.com
+# Local (optional)
+# VITE_BACKEND_URL=http://localhost:3000
 ```
 
 ### 2) Install dependencies
@@ -74,7 +74,7 @@ cd frontend && npm run dev
 cd admin && npm run dev
 ```
 
-Frontend runs on `http://localhost:5173`, Admin on `http://localhost:5174` (or the port shown), Backend on `http://localhost:3000`.
+Frontend runs on `http://localhost:5173`, Admin on `http://localhost:5174` (or the port shown), Backend on your configured URL.
 
 ### Notes
 

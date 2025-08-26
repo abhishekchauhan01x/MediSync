@@ -18,11 +18,11 @@ app.use(express.json())
 // middlewares
 const allowedOrigins = [
     // Production web apps (commented for reference)
-    // 'https://medi-sync-dusky.vercel.app',
-    // 'https://medisync-admin-mu.vercel.app',
-    // Local development apps
-    'http://localhost:5173',
-    'http://localhost:5174'
+    'https://medi-sync-dusky.vercel.app',
+    'https://medisync-admin-mu.vercel.app',
+    // // Local development apps
+    // 'http://localhost:5173',
+    // 'http://localhost:5174'
 ].concat(
     (process.env.CORS_EXTRA_ORIGINS || '')
         .split(',')
