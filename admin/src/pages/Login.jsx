@@ -29,6 +29,9 @@ const Login = () => {
                 if (data.success) {
                     localStorage.setItem('aToken', data.token)
                     setAToken(data.token);
+                    // Ensure doctor session is cleared when logging in as admin
+                    localStorage.removeItem('dToken')
+                    setDToken('')
                     navigate('/admin-dashboard')
                     
                 } else {
@@ -41,6 +44,9 @@ const Login = () => {
                 if (data.success) {
                     localStorage.setItem('dToken', data.token)
                     setDToken(data.token);
+                    // Ensure admin session is cleared when logging in as doctor
+                    localStorage.removeItem('aToken')
+                    setAToken('')
                     console.log(data.token);
                     navigate('/doctor-dashboard')
                     
