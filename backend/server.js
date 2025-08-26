@@ -17,9 +17,18 @@ app.use(express.json())
 
 // middlewares
 const allowedOrigins = [
-    'https://medi-sync-dusky.vercel.app',
-    'https://medisync-admin-mu.vercel.app'
-];
+    // Production web apps (commented for reference)
+    // 'https://medi-sync-dusky.vercel.app',
+    // 'https://medisync-admin-mu.vercel.app',
+    // Local development apps
+    'http://localhost:5173',
+    'http://localhost:5174'
+].concat(
+    (process.env.CORS_EXTRA_ORIGINS || '')
+        .split(',')
+        .map(s => s.trim())
+        .filter(Boolean)
+);
 
 app.use(cors({
     origin: function (origin, callback) {

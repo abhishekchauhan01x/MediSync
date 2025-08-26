@@ -6,7 +6,7 @@ export const DoctorContext = createContext()
 
 const DoctorContextProvider = (props) => {
 
-    const backendUrl = "https://medisync-q4dk.onrender.com"
+    const backendUrl = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000').replace(/\/+$/, '')
 
     const [dToken, setDToken] = useState(localStorage.getItem('dToken') ? localStorage.getItem('dToken') : '')
     const [appointments, setAppointments] = useState([])

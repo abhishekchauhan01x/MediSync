@@ -13,7 +13,7 @@ const AdminContextProvider = (props) => {
     const [appointments, setAppointments] = useState([])
     const [dashData, setDashData] = useState(false)
 
-    const backendUrl = "https://medisync-q4dk.onrender.com"
+    const backendUrl = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000').replace(/\/+$/, '')
 
     const getAllDoctors = async () => {
 
